@@ -7,47 +7,28 @@ HeadPointer = 0
 TailPointer = -1
 
 def IsEmpty():
-    global Queue, Headpointer, Tailpointer
-    if HeadPointer == -1 or Headpointer > Tailpointer:
-        return -1
-
+    return HeadPointer > TailPointer
 
 def IsFull():
-    global Queue, Headpointer, Tailpointer
-    if HeadPointer == -1 or Headpointer > Tailpointer:
-        return 0
+    return TailPointer == 7
 
 
 # Exercise 2
 def Enqueue(Item):
-    global Queue, HeadPointer, TailPointer, NumberItems
-    if NumberItems == 5:
-         return False
-    if NumberItems == 0:
-        HeadPointer = 0
-        TailPointer = 0
-    else:
-        TailPointer = TailPointer + 1
-        if TailPointer == 5:
-            TailPointer = 0
-    Queue[TailPointer] = Data
-    NumberItems = NumberItems + 1
+    global TailPointer
+    if IsFull():
+        return False
+    TailPointer += 1
+    Queue[TailPointer] = Item
     return True
-
 # Exercise 3
 def Dequeue():
-    global Queue, HeadPointer, TailPointer, NumberItems
-    if NumberItems == 0:
-         return -1
-    DataToReturn = Queue[HeadPointer]
-    HeadPointer = HeadPointer + 1
-    if HeadPointer == 5:
-        HeadPointer = 0
-    NumberItems = NumberItems - 1
-    if NumberItems == 0:
-        HeadPointer = -1
-        TailPointer = -1
-    return DataToReturn
+    global HeadPointer
+    if IsEmpty():
+        return -1
+    removed_item = Queue[HeadPointer]
+    HeadPointer += 1
+    return removed_item
 
 # Exercise 4
 def Peek():
