@@ -5,15 +5,11 @@
 Queue = []
 HeadPointer = 0
 TailPointer = -1
+
 def IsEmpty():
     global Queue, Headpointer, Tailpointer
     if HeadPointer == -1 or Headpointer > Tailpointer:
         return -1
-
-
-def IsEmpty():
-    # Write your code here
-    pass
 
 
 def IsFull():
