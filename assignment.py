@@ -20,9 +20,19 @@ def IsFull():
 
 # Exercise 2
 def Enqueue(Item):
-    # Write your code here
-    pass
-
+    global Queue, HeadPointer, TailPointer, NumberItems
+    if NumberItems == 5:
+         return False
+    if NumberItems == 0:
+        HeadPointer = 0
+        TailPointer = 0
+    else:
+        TailPointer = TailPointer + 1
+        if TailPointer == 5:
+            TailPointer = 0
+    Queue[TailPointer] = Data
+    NumberItems = NumberItems + 1
+    return True
 
 # Exercise 3
 def Dequeue():
