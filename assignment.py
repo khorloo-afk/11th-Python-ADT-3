@@ -36,9 +36,18 @@ def Enqueue(Item):
 
 # Exercise 3
 def Dequeue():
-    # Write your code here
-    pass
-
+    global Queue, HeadPointer, TailPointer, NumberItems
+    if NumberItems == 0:
+         return -1
+    DataToReturn = Queue[HeadPointer]
+    HeadPointer = HeadPointer + 1
+    if HeadPointer == 5:
+        HeadPointer = 0
+    NumberItems = NumberItems - 1
+    if NumberItems == 0:
+        HeadPointer = -1
+        TailPointer = -1
+    return DataToReturn
 
 # Exercise 4
 def Peek():
