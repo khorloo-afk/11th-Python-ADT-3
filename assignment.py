@@ -51,8 +51,8 @@ def Dequeue():
 
 # Exercise 4
 def Peek():
-    # Write your code here
-    pass
+     global Queue, Headpointer
+     return Queue[Headpointer]
 
 
 def ShowQueue():
