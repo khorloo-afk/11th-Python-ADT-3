@@ -5,7 +5,10 @@
 Queue = []
 HeadPointer = 0
 TailPointer = -1
-# Write code here to fill Queue with 8 elements, all -1
+def IsEmpty():
+    global Queue, Headpointer, Tailpointer
+    if HeadPointer == -1 or Headpointer > Tailpointer:
+        return -1
 
 
 def IsEmpty():
