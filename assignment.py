@@ -13,8 +13,9 @@ def IsEmpty():
 
 
 def IsFull():
-    # Write your code here
-    pass
+    global Queue, Headpointer, Tailpointer
+    if HeadPointer == -1 or Headpointer > Tailpointer:
+        return 0
 
 
 # Exercise 2
