@@ -32,16 +32,18 @@ def Dequeue():
 
 # Exercise 4
 def Peek():
-     global Queue, Headpointer
-     return Queue[Headpointer]
-
+    if IsEmpty():
+        return -1
+    return Queue[HeadPointer]
 
 def ShowQueue():
-    # Write your code here
-    pass
-
+    if IsEmpty():
+        return ""
+    items = []
+    for i in range(HeadPointer, TailPointer + 1):
+        items.append(str(Queue[i]))
+    return " ".join(items)
 
 # Exercise 5
 def Canteen(Commands):
-    # Write your code here
-    pass
+
